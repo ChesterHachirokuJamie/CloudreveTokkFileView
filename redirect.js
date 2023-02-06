@@ -1,9 +1,3 @@
-// var url = window.location.href;
-// console.log(url);//Test Get All Url String
-
-// var url2 = window.location.search;
-// console.log(url2);//Test Get QueryString
-
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);
@@ -14,40 +8,12 @@ function GetQueryString(name) {
     r = null;
     return context == null || context == "" || context == "undefined" ? "" : context;
 }
-// var url3 = GetQueryString("url"); //Test Get QueryString, without Query Name
-// var url4 = decodeURIComponent(url3);
-// console.log(url4);
 
 // Base64 Lib
 // Base64 encoder/decoder with UTF-8 support
-//
 // Copyright (c) 2011 Vitaly Puzrin
 // Copyright (c) 2011 Aleksey V Zapparov
-//
 // Author: Aleksey V Zapparov AKA ixti (http://www.ixti.net/)
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
-
-// Based on original artworks of base64 encoder/decoder by [Mozilla][1]
-// [1]: http://lxr.mozilla.org/mozilla/source/extensions/xml-rpc/src/nsXmlRpcClient.js
-
 (function (global) {
     'use strict';
   
@@ -194,10 +160,4 @@ function GetQueryString(name) {
   
     global.base64 = {encode: encode, decode: decode};
   }(window));
-
-// var url5 = base64.encode(url4);
-// console.log(url5);
-// var url6 = encodeURIComponent(url5);
-// console.log(url6);
-
 window.location=('https://domain:port/WhatEverSuitsYourNeed/onlinePreview?url='+encodeURIComponent(base64.encode(decodeURIComponent(GetQueryString("url")))))
